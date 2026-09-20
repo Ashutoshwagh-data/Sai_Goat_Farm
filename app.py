@@ -169,7 +169,7 @@ with g1:
     st.markdown('<div class="goat-card">', unsafe_allow_html=True)
 
     st.image(
-        "images/beetal.jpg",
+        "images/10-months-old-healthy-male-live-beetal-goat-with-25-kilograms-weight-640.jpg",
         caption="🐐 Beetal Goat",
         use_container_width=True
     )
@@ -187,7 +187,7 @@ with g2:
     st.markdown('<div class="goat-card">', unsafe_allow_html=True)
 
     st.image(
-        "images/boer.jpg",
+        "images/e5a3a59f732d25419dc2cd33d1845104",
         caption="🐐 Boer Goat",
         use_container_width=True
     )
