@@ -1,105 +1,19 @@
-
 import streamlit as st
 
-# Page configuration
+# =========================================================
+# PAGE CONFIGURATION
+# =========================================================
+
 st.set_page_config(
     page_title="SAI GOAT FARM",
     page_icon="🐐",
     layout="wide"
 )
 
-# Custom CSS
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #f5faf5;
-    }
+# =========================================================
+# SIDEBAR
+# =========================================================
 
-    .hero {
-        background: linear-gradient(135deg, #064e3b, #16a34a);
-        padding: 45px;
-        border-radius: 25px;
-        text-align: center;
-        color: white;
-        margin-bottom: 30px;
-    }
-
-    .hero-logo {
-        font-size: 70px;
-    }
-
-    .hero-title {
-        font-size: 48px;
-        font-weight: bold;
-    }
-
-    .hero-tagline {
-        font-size: 21px;
-    }
-
-    .category {
-        background-color: #facc15;
-        color: black;
-        padding: 8px 18px;
-        border-radius: 25px;
-        display: inline-block;
-        font-weight: bold;
-    }
-
-    .section-title {
-        text-align: center;
-        color: #065f46;
-        font-size: 32px;
-        font-weight: bold;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-
-    .card {
-        background-color: white;
-        padding: 25px;
-        border-radius: 18px;
-        text-align: center;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
-        margin-bottom: 20px;
-    }
-
-    .card-icon {
-        font-size: 45px;
-    }
-
-    .breed-card {
-        background-color: white;
-        padding: 25px;
-        border-radius: 18px;
-        text-align: center;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
-        margin-bottom: 20px;
-    }
-
-    .contact {
-        background: #064e3b;
-        color: white;
-        padding: 35px;
-        border-radius: 20px;
-        text-align: center;
-    }
-
-    .footer {
-        background: #022c22;
-        color: white;
-        padding: 25px;
-        border-radius: 15px;
-        text-align: center;
-        margin-top: 40px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Sidebar
 st.sidebar.title("🐐 SAI GOAT FARM")
 
 page = st.sidebar.radio(
@@ -114,9 +28,11 @@ page = st.sidebar.radio(
     ]
 )
 
-st.sidebar.markdown("---")
-st.sidebar.write("🏷️ Goat Farming & Livestock")
+st.sidebar.divider()
+
+st.sidebar.write("🏷️ Goat Farming & Livestock Business")
 st.sidebar.write("📍 Chitali, Rahata, Ahilyanagar")
+st.sidebar.write("📱 9579187477")
 
 
 # =========================================================
@@ -125,27 +41,19 @@ st.sidebar.write("📍 Chitali, Rahata, Ahilyanagar")
 
 if page == "🏠 Home":
 
-    st.markdown(
-        """
-        <div class="hero">
-            <div class="hero-logo">🐐</div>
-            <div class="hero-title">SAI GOAT FARM</div>
-            <div class="hero-tagline">
-                Healthy Goats • Better Farming • Better Future
-            </div>
-            <br>
-            <div class="category">
-                🏷️ Goat Farming & Livestock Business
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.title("🐐 SAI GOAT FARM")
+
+    st.subheader(
+        "Healthy Goats • Better Farming • Better Future"
     )
 
-    st.markdown(
-        '<div class="section-title">Welcome to SAI GOAT FARM</div>',
-        unsafe_allow_html=True
+    st.success(
+        "🏷️ Goat Farming & Livestock Business"
     )
+
+    st.divider()
+
+    st.header("Welcome to SAI GOAT FARM")
 
     st.write(
         """
@@ -157,88 +65,56 @@ if page == "🏠 Home":
         """
     )
 
-    st.markdown(
-        '<div class="section-title">What We Focus On</div>',
-        unsafe_allow_html=True
-    )
+    st.divider()
+
+    st.header("What We Focus On")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown(
-            """
-            <div class="card">
-                <div class="card-icon">🐐</div>
-                <h3>Healthy Goats</h3>
-                <p>
-                Focus on proper care, feeding and healthy
-                goat management.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.subheader("🐐 Healthy Goats")
+        st.write(
+            "Focus on proper care, feeding and healthy goat management."
         )
 
     with col2:
-        st.markdown(
-            """
-            <div class="card">
-                <div class="card-icon">🌱</div>
-                <h3>Better Farming</h3>
-                <p>
-                Responsible and sustainable goat farming
-                practices.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.subheader("🌱 Better Farming")
+        st.write(
+            "Responsible and sustainable goat farming practices."
         )
 
     with col3:
-        st.markdown(
-            """
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>Customer Trust</h3>
-                <p>
-                We believe in quality, transparency and
-                long-term relationships.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.subheader("🤝 Customer Trust")
+        st.write(
+            "Quality, transparency and long-term relationships."
         )
 
-    st.markdown(
-        '<div class="section-title">Our Business</div>',
-        unsafe_allow_html=True
-    )
+    st.divider()
+
+    st.header("Our Business")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.info("🐐 Business Name: SAI GOAT FARM")
-        st.info("🏷️ Category: Goat Farming & Livestock")
+        st.info("🏷️ Category: Goat Farming & Livestock Business")
 
     with col2:
         st.success(
-            "💬 Tagline: Healthy Goats • Better Farming • Better Future"
+            "💬 Healthy Goats • Better Farming • Better Future"
         )
         st.success(
-            "📍 Location: At Post Chitali, Ta. Rahata, Dist. Ahilyanagar"
+            "📍 At Post Chitali, Ta. Rahata, Dist. Ahilyanagar"
         )
 
 
 # =========================================================
-# ABOUT
+# ABOUT US
 # =========================================================
 
 elif page == "📖 About Us":
 
-    st.markdown(
-        '<div class="section-title">📖 About SAI GOAT FARM</div>',
-        unsafe_allow_html=True
-    )
+    st.title("📖 About SAI GOAT FARM")
 
     st.write(
         """
@@ -250,95 +126,105 @@ elif page == "📖 About Us":
         """
     )
 
+    st.divider()
+
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(
+        st.subheader("🎯 Our Mission")
+
+        st.write(
             """
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Our Mission</h3>
-                <p>
-                To develop a sustainable goat farming business
-                by maintaining healthy livestock and following
-                better farming practices.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
+            To develop a sustainable goat farming business by
+            maintaining healthy livestock and following better
+            farming practices.
+            """
         )
 
     with col2:
-        st.markdown(
+        st.subheader("🚀 Our Vision")
+
+        st.write(
             """
-            <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3>Our Vision</h3>
-                <p>
-                To become a trusted name in goat farming and
-                livestock business.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
+            To become a trusted name in goat farming and
+            livestock business.
+            """
         )
+
+    st.divider()
+
+    st.info(
+        "🐐 Our goal is to combine proper goat care with better farming practices."
+    )
 
 
 # =========================================================
-# BREEDS
+# GOAT BREEDS
 # =========================================================
 
 elif page == "🐐 Goat Breeds":
 
-    st.markdown(
-        '<div class="section-title">🐐 Our Goat Breeds</div>',
-        unsafe_allow_html=True
-    )
+    st.title("🐐 Our Goat Breeds")
 
     st.write(
         "SAI GOAT FARM focuses on different popular goat breeds."
     )
 
-    breeds = [
-        (
-            "Beetel",
-            "A well-known Indian goat breed with good body size "
-            "and productive characteristics."
-        ),
-        (
-            "Osmanabadi",
-            "A popular Maharashtra breed known for adaptability "
-            "and suitability to local conditions."
-        ),
-        (
-            "Boer",
-            "A popular meat goat breed known for its growth "
-            "and strong body structure."
-        ),
-        (
-            "Sannen",
-            "A well-known dairy goat breed recognized for "
-            "milk production."
-        )
-    ]
+    st.divider()
 
     col1, col2 = st.columns(2)
 
-    for i, (breed_name, description) in enumerate(breeds):
+    with col1:
 
-        with col1 if i % 2 == 0 else col2:
+        st.subheader("🐐 Beetel")
 
-            st.markdown(
-                f"""
-                <div class="breed-card">
-                    <div class="card-icon">🐐</div>
-                    <h2>{breed_name}</h2>
-                    <p>{description}</p>
-                    <strong>Price: As per breed</strong>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+        st.write(
+            """
+            A well-known Indian goat breed with good body size
+            and productive characteristics.
+            """
+        )
+
+        st.info("💰 Price: As per breed")
+
+        st.divider()
+
+        st.subheader("🐐 Osmanabadi")
+
+        st.write(
+            """
+            A popular Maharashtra breed known for adaptability
+            and suitability to local conditions.
+            """
+        )
+
+        st.info("💰 Price: As per breed")
+
+    with col2:
+
+        st.subheader("🐐 Boer")
+
+        st.write(
+            """
+            A popular meat goat breed known for its growth
+            and strong body structure.
+            """
+        )
+
+        st.info("💰 Price: As per breed")
+
+        st.divider()
+
+        st.subheader("🐐 Sannen")
+
+        st.write(
+            """
+            A well-known dairy goat breed recognized for
+            milk production.
+            """
+        )
+
+        st.info("💰 Price: As per breed")
 
 
 # =========================================================
@@ -347,36 +233,51 @@ elif page == "🐐 Goat Breeds":
 
 elif page == "🌾 Services":
 
-    st.markdown(
-        '<div class="section-title">🌾 Our Services</div>',
-        unsafe_allow_html=True
-    )
+    st.title("🌾 Our Services")
 
-    services = [
-        ("🐐", "Goat Rearing", "Proper care and management of goats."),
-        ("🌱", "Feed Management", "Proper feeding and nutrition management."),
-        ("🏡", "Livestock Management", "Clean and responsible goat management."),
-        ("🤝", "Goat Sales", "Goats available according to breed and requirements."),
-        ("📚", "Farming Guidance", "Basic guidance for people interested in goat farming."),
-        ("🚜", "Sustainable Farming", "Responsible livestock farming practices.")
-    ]
+    st.divider()
 
-    columns = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-    for i, (icon, title, description) in enumerate(services):
+    with col1:
+        st.subheader("🐐 Goat Rearing")
+        st.write(
+            "Proper care and management of goats."
+        )
 
-        with columns[i % 3]:
+    with col2:
+        st.subheader("🌱 Feed Management")
+        st.write(
+            "Proper feeding and nutrition management."
+        )
 
-            st.markdown(
-                f"""
-                <div class="card">
-                    <div class="card-icon">{icon}</div>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+    with col3:
+        st.subheader("🏡 Livestock Management")
+        st.write(
+            "Clean and responsible goat management."
+        )
+
+    st.divider()
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.subheader("🤝 Goat Sales")
+        st.write(
+            "Goats available according to breed and requirements."
+        )
+
+    with col2:
+        st.subheader("📚 Farming Guidance")
+        st.write(
+            "Basic guidance for people interested in goat farming."
+        )
+
+    with col3:
+        st.subheader("🚜 Sustainable Farming")
+        st.write(
+            "Responsible livestock farming practices."
+        )
 
 
 # =========================================================
@@ -385,16 +286,20 @@ elif page == "🌾 Services":
 
 elif page == "⭐ Why Choose Us":
 
-    st.markdown(
-        '<div class="section-title">⭐ Why Choose SAI GOAT FARM?</div>',
-        unsafe_allow_html=True
-    )
+    st.title("⭐ Why Choose SAI GOAT FARM?")
+
+    st.divider()
 
     st.success("🐐 Focus on healthy livestock")
+
     st.success("🌱 Better farming practices")
+
     st.success("🥬 Proper feeding and care")
+
     st.success("🧹 Clean and responsible management")
+
     st.success("🤝 Customer-focused approach")
+
     st.success("📈 Focus on sustainable growth")
 
 
@@ -404,44 +309,38 @@ elif page == "⭐ Why Choose Us":
 
 elif page == "📞 Contact":
 
-    st.markdown(
-        '<div class="section-title">📞 Contact Us</div>',
-        unsafe_allow_html=True
+    st.title("📞 Contact SAI GOAT FARM")
+
+    st.divider()
+
+    st.header("🐐 SAI GOAT FARM")
+
+    st.subheader(
+        "Healthy Goats • Better Farming • Better Future"
     )
 
-    st.markdown(
-        """
-        <div class="contact">
-
-            <h2>🐐 SAI GOAT FARM</h2>
-
-            <p>
-            Healthy Goats • Better Farming • Better Future
-            </p>
-
-            <p>📱 9579187477</p>
-
-            <p>📧 ashutosh123@gmail.com</p>
-
-            <p>
-            📍 At Post Chitali, Ta. Rahata,
-            Dist. Ahilyanagar
-            </p>
-
-            <p>
-            🏷️ Goat Farming & Livestock Business
-            </p>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.info(
+        "📱 Phone: 9579187477"
     )
 
-    st.write("")
+    st.info(
+        "📧 Email: ashutosh123@gmail.com"
+    )
+
+    st.info(
+        "📍 At Post Chitali, Ta. Rahata, Dist. Ahilyanagar"
+    )
+
+    st.info(
+        "🏷️ Goat Farming & Livestock Business"
+    )
+
+    st.divider()
 
     col1, col2 = st.columns(2)
 
     with col1:
+
         st.link_button(
             "📱 WhatsApp Us",
             "https://wa.me/919579187477",
@@ -449,6 +348,7 @@ elif page == "📞 Contact":
         )
 
     with col2:
+
         st.link_button(
             "📧 Send Email",
             "mailto:ashutosh123@gmail.com",
@@ -460,27 +360,16 @@ elif page == "📞 Contact":
 # FOOTER
 # =========================================================
 
-st.markdown(
-    """
-    <div class="footer">
+st.divider()
 
-        <h3>🐐 SAI GOAT FARM</h3>
-
-        <p>
-        Healthy Goats • Better Farming • Better Future
-        </p>
-
-        <p>
-        📱 9579187477 &nbsp; | &nbsp;
-        📧 ashutosh123@gmail.com
-        </p>
-
-        <p>
-        © 2026 SAI GOAT FARM • All Rights Reserved
-        </p>
-
-    </div>
-    """,
-    unsafe_allow_html=True
+st.caption(
+    "🐐 SAI GOAT FARM | Healthy Goats • Better Farming • Better Future"
 )
 
+st.caption(
+    "📱 9579187477 | 📧 ashutosh123@gmail.com"
+)
+
+st.caption(
+    "© 2026 SAI GOAT FARM • All Rights Reserved"
+)
